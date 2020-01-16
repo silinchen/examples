@@ -1,0 +1,47 @@
+{
+  "name": "nextjs-github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "export": "next export",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.19.5",
+    "atob": "^2.1.2",
+    "axios": "^0.19.0",
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-styled-components": "^1.10.1",
+    "cross-env": "^5.2.0",
+    "github-markdown-css": "^3.0.1",
+    "ioredis": "^4.10.0",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.0",
+    "lodash": "^4.17.11",
+    "lru-cache": "^5.1.1",
+    "markdown-it": "^8.4.2",
+    "moment": "^2.24.0",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
