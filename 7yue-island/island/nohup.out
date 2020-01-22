@@ -1,0 +1,33 @@
+(node:53095) [SEQUELIZE0002] DeprecationWarning: The logging-option should be either a function or false. Default: console.log
+Executing (default): CREATE TABLE IF NOT EXISTS `movie` (`id` INTEGER NOT NULL auto_increment , `image` VARCHAR(255), `content` VARCHAR(255), `pubdate` DATE, `fav_nums` INTEGER DEFAULT 0, `title` VARCHAR(255), `type` TINYINT, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `movie`
+Executing (default): CREATE TABLE IF NOT EXISTS `sentence` (`id` INTEGER NOT NULL auto_increment , `image` VARCHAR(255), `content` VARCHAR(255), `pubdate` DATE, `fav_nums` INTEGER DEFAULT 0, `title` VARCHAR(255), `type` TINYINT, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `sentence`
+Executing (default): CREATE TABLE IF NOT EXISTS `music` (`id` INTEGER NOT NULL auto_increment , `url` VARCHAR(255), `image` VARCHAR(255), `content` VARCHAR(255), `pubdate` DATE, `fav_nums` INTEGER DEFAULT 0, `title` VARCHAR(255), `type` TINYINT, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `music`
+Executing (default): CREATE TABLE IF NOT EXISTS `favor` (`id` INTEGER NOT NULL auto_increment , `uid` INTEGER, `art_id` INTEGER, `type` INTEGER, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `favor`
+Executing (default): CREATE TABLE IF NOT EXISTS `hot_book` (`id` INTEGER NOT NULL auto_increment , `index` INTEGER, `image` VARCHAR(255), `author` VARCHAR(255), `title` VARCHAR(255), `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `hot_book`
+Executing (default): CREATE TABLE IF NOT EXISTS `book` (`id` INTEGER , `fav_nums` INTEGER DEFAULT 0, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `book`
+Executing (default): CREATE TABLE IF NOT EXISTS `comment` (`id` INTEGER NOT NULL auto_increment , `content` VARCHAR(12), `nums` INTEGER DEFAULT 0, `book_id` INTEGER, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `comment`
+Executing (default): CREATE TABLE IF NOT EXISTS `user` (`id` INTEGER auto_increment , `nickname` VARCHAR(255), `email` VARCHAR(128) UNIQUE, `password` VARCHAR(255), `openid` VARCHAR(64) UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `user`
+Executing (default): CREATE TABLE IF NOT EXISTS `flow` (`id` INTEGER NOT NULL auto_increment , `index` INTEGER, `art_id` INTEGER, `type` INTEGER, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `flow`
+Executing (default): SELECT `id`, `index`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `flow` AS `Flow` WHERE (`Flow`.`deleted_at` IS NULL) ORDER BY `Flow`.`index` DESC LIMIT 1;
+Executing (default): SELECT `id`, `image`, `content`, `pubdate`, `fav_nums`, `title`, `type` FROM `movie` AS `Movie` WHERE (`Movie`.`deleted_at` IS NULL AND `Movie`.`id` = 1);
+Executing (default): SELECT `id`, `uid`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `favor` AS `Favor` WHERE (`Favor`.`deleted_at` IS NULL AND (`Favor`.`uid` = 2 AND `Favor`.`art_id` = 1 AND `Favor`.`type` = 100)) LIMIT 1;
+Executing (default): SELECT `id`, `url`, `image`, `content`, `pubdate`, `fav_nums`, `title`, `type` FROM `music` AS `Music` WHERE (`Music`.`deleted_at` IS NULL AND `Music`.`id` = 1);
+Executing (default): SELECT `id`, `uid`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `favor` AS `Favor` WHERE (`Favor`.`deleted_at` IS NULL AND (`Favor`.`uid` = 2 AND `Favor`.`art_id` = 1 AND `Favor`.`type` = 200)) LIMIT 1;
+Executing (default): SELECT `id`, `image`, `content`, `pubdate`, `fav_nums`, `title`, `type` FROM `sentence` AS `Sentence` WHERE (`Sentence`.`deleted_at` IS NULL AND `Sentence`.`id` = 1);
+Executing (default): SELECT `id`, `uid`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `favor` AS `Favor` WHERE (`Favor`.`deleted_at` IS NULL AND (`Favor`.`uid` = 2 AND `Favor`.`art_id` = 1 AND `Favor`.`type` = 300)) LIMIT 1;
+Executing (default): SELECT `id`, `index`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `flow` AS `Flow` WHERE (`Flow`.`deleted_at` IS NULL AND `Flow`.`index` = 5) LIMIT 1;
+Executing (default): SELECT `id`, `url`, `image`, `content`, `pubdate`, `fav_nums`, `title`, `type` FROM `music` AS `Music` WHERE (`Music`.`deleted_at` IS NULL AND `Music`.`id` = 4);
+Executing (default): SELECT `id`, `uid`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `favor` AS `Favor` WHERE (`Favor`.`deleted_at` IS NULL AND (`Favor`.`uid` = 2 AND `Favor`.`art_id` = 4 AND `Favor`.`type` = 200)) LIMIT 1;
+Executing (default): SELECT `id`, `url`, `image`, `content`, `pubdate`, `fav_nums`, `title`, `type` FROM `music` AS `Music` WHERE (`Music`.`deleted_at` IS NULL AND `Music`.`id` = 4);
+Executing (default): SELECT `id`, `uid`, `art_id`, `type`, `created_at`, `updated_at`, `deleted_at` FROM `favor` AS `Favor` WHERE (`Favor`.`deleted_at` IS NULL AND (`Favor`.`uid` = 2 AND `Favor`.`art_id` = 4 AND `Favor`.`type` = 200)) LIMIT 1;
+Executing (default): SELECT `id`, `index`, `image`, `author`, `title`, `created_at`, `updated_at`, `deleted_at` FROM `hot_book` AS `HotBook` WHERE (`HotBook`.`deleted_at` IS NULL) ORDER BY `HotBook`.`index`;
+Executing (default): SELECT `art_id`, COUNT('*') AS `count` FROM `favor` AS `Favor` WHERE (`Favor`.`deleted_at` IS NULL AND (`Favor`.`art_id` IN (7, 65, 183, 1002, 1049, 1061, 1120, 1166, 1308, 1339, 1383, 1398, 1560, 7821, 8854, 8866, 15198, 15984, 21050, 51664) AND `Favor`.`type` = 400)) GROUP BY `art_id`;
