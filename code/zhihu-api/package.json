@@ -10,7 +10,7 @@
   "author": "lewis617",
   "license": "ISC",
   "dependencies": {
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
     "koa-json-error": "^3.1.2",
